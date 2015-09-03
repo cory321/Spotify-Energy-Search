@@ -8,6 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -42,25 +46,25 @@
 			<div class="col-xs-6">
 					<div class="form-group">
 						<label for="danceability">Danceability</label>
-						<input type="range" id="danceability" value="100">
-						<span>Level:100</span>
+						<div id="DanceSlider"></div>
+						<span>0.250000 - 0.750000</span>
 					</div>
 					<div class="form-group">
-						<label for="danceability">Energy</label>
-						<input type="range" id="danceability" value="100">
-						<span>Level:100</span>
+						<label for="danceability">Tempo (Beats Per Minute)</label>
+						<div id="TempoSlider"></div>
+						<span>75 - 225</span>
 					</div>
 			</div>
 			<div class="col-xs-6">
 					<div class="form-group">
-						<label for="danceability">Tempo</label>
-						<input type="range" id="danceability" value="100">
-						<span>Level:100</span>
+						<label for="danceability">Energy</label>
+						<div id="EnergySlider"></div>
+						<span>0.250000 - 0.750000</span>
 					</div>
 					<div class="form-group">
-						<label for="danceability">Duration</label>
-						<input type="range" id="danceability" value="100">
-						<span>Level:100</span>
+						<label for="danceability">Duration (Seconds) <small>(10 Minute Song Maximum)</small></label>
+						<div id="DurationSlider"></div>
+						<span>150 - 450</span>
 					</div>
 			</div>
 			<div class="col-xs-3"></div>

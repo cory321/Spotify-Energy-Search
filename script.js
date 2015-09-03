@@ -8,6 +8,64 @@ $(function(){
 	var $submitButton = $("#submit");
 	var $genreDiv = $("#genreDiv");
 
+	var min_danceability = 0.0;
+	var max_danceability = 0.999999;
+
+	var min_tempo = 0;
+	var max_tempo = 300;
+
+	var min_energy = 0.0;
+	var max_energy = 0.999999;
+
+	var min_duration = 0;
+	var max_duration = 600;
+
+	$("input[type*='range']").on("change mousemove", function() {
+    	$(this).next().html($(this).val());
+	});
+
+	$("#DanceSlider").slider({
+		range : true,
+		min : 0,
+		max: 999999,
+		values: [250000, 750000 ],
+		slide: function(event, ui) {
+			$(this).next().html("0."+ui.values[0] + " - " + "0."+ui.values[1]);
+			min_danceability = ui.values[0];
+			max_danceability = ui.values[1];
+		}
+	});
+
+	$("#TempoSlider").slider({
+		range : true,
+		min : 0,
+		max: 300,
+		values: [75,225],
+		slide: function(event, ui) {
+			$(this).next().html(ui.values[0] + " bpm - "+ ui.values[1]+" bpm");
+		}
+	});
+
+	$("#EnergySlider").slider({
+		range : true,
+		min : 0,
+		max: 999999,
+		values: [250000, 750000],
+		slide: function(event, ui) {
+			$(this).next().html("0."+ui.values[0] + " - " + "0."+ui.values[1]);
+		}
+	});
+
+	$("#DurationSlider").slider({
+		range : true,
+		min : 0,
+		max: 600,
+		values: [150, 450],
+		slide: function(event, ui) {
+			$(this).next().html(ui.values[0] + " - "+ui.values[1]);
+		}
+	});
+
 	$submitButton.click(function(){
 		
 		event.preventDefault();
@@ -27,18 +85,6 @@ $(function(){
 		$c.empty();
 		$alerts.empty();
 		$genreDiv.removeClass("has-error");
-
-		var min_danceability = 0.0;
-		var max_danceability = 0.99;
-
-		var min_tempo = 0;
-		var max_tempo = 200;
-
-		var min_energy = 0.2;
-		var max_energy = 0.9;
-
-		var min_duration = 0;
-		var max_duration = 5000;
 
 		var sort = "artist_familiarity-desc";
 
